@@ -51,6 +51,7 @@ def train_model(model, params, optim, scheduler, progress_bars=True, perclass_st
                     epoch_log = tqdm.tqdm_notebook(total=len(loaders[1])/batch_size, desc='Eval ', position=0)
                 dataset_loader = loaders[1]
                 dataset = datasets[1]
+                model.eval()
                 
             # Set the initial running cost and running accuracy to zero.  We will update these after each mini batch and will
             # obtain an overall running cost and accuracy for each epoch.  We want the loss to be as low as possible and the
