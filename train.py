@@ -9,7 +9,7 @@ import torch.nn.functional as F
 # We define the model that we will use to train our algorithm.
 def train_model(model, params, optim, scheduler, progress_bars=True, perclass_stat=False, weights=None, num_epochs=25):
     
-    weights = Torch.ones([model.n_class]) if weights is None else weights
+    weights = torch.ones([model.n_class]) if weights is None else weights
     if not isinstance(weights, torch.Tensor):
         raise Exception("Weight vector should be a torch.Tensor")
     if weights.size(0) != model.n_class:
